@@ -1,0 +1,438 @@
+/* ==========================================================================
+   ChainBreaker — clinical console
+   Separate stylesheet: a different role gets a different surface. Pulls its
+   tokens from styles.css so it still looks like the same product.
+   ========================================================================== */
+
+html,
+body.clin-body {
+  height: auto;
+  min-height: 100%;
+  overflow: auto;
+}
+
+.clin-body {
+  background: var(--bg-soft);
+  color: var(--ink-2);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.clin {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ------------------------------------------------------------------ top -- */
+
+.clin-top {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  height: 64px;
+  padding: 0 24px;
+  background: color-mix(in srgb, var(--bg-soft) 88%, transparent);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+
+.clin-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 720;
+  font-size: 1rem;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+}
+
+.clin-tag {
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: var(--teal-100, #d8f6f2);
+  color: var(--teal-700, #0b7f74);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.clin-who {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: auto;
+}
+
+.clin-who-name {
+  font-size: 13.5px;
+  font-weight: 620;
+  color: var(--ink-2);
+}
+
+/* ----------------------------------------------------------------- main -- */
+
+.clin-main {
+  flex: 1;
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 28px 24px 48px;
+}
+
+/* ------------------------------------------------------------- sign in -- */
+
+.clin-card {
+  max-width: 460px;
+  margin: 5vh auto 0;
+  padding: 30px;
+  border-radius: var(--r-lg);
+  border: 1px solid var(--line);
+  background: var(--surface);
+  box-shadow: var(--shadow-lg);
+}
+
+.clin-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.clin-chip .icon {
+  width: 13px;
+  height: 13px;
+}
+
+.clin-card h1 {
+  font-size: 1.6rem;
+  letter-spacing: -0.03em;
+  margin-bottom: 10px;
+}
+
+.clin-card > p {
+  font-size: 14px;
+  line-height: 1.62;
+  color: var(--ink-3);
+  margin-bottom: 22px;
+}
+
+.clin-alert {
+  margin-top: 20px;
+  padding: 13px 15px;
+  border-radius: var(--r-md);
+  border: 1px solid color-mix(in srgb, #e8890c 45%, transparent);
+  background: color-mix(in srgb, #e8890c 9%, var(--surface));
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: var(--ink-2);
+}
+
+.clin-alert strong {
+  color: var(--ink);
+}
+
+.clin-back {
+  margin-top: 18px;
+  font-size: 13px;
+}
+
+.clin-back a {
+  color: var(--accent);
+}
+
+/* Form primitives, scoped to this page. */
+.clin .field {
+  display: grid;
+  gap: 7px;
+  margin-bottom: 18px;
+}
+
+.clin .label {
+  font-size: 13.5px;
+  font-weight: 650;
+  color: var(--ink);
+}
+
+.clin .input {
+  width: 100%;
+  height: 46px;
+  padding: 0 14px;
+  border-radius: var(--r-sm);
+  border: 1px solid var(--line-2);
+  background: var(--bg);
+  color: var(--ink);
+  font-size: 14.5px;
+  font-family: inherit;
+  transition: border-color 0.18s var(--ease), box-shadow 0.18s var(--ease);
+}
+
+.clin .input::placeholder {
+  color: var(--ink-4);
+}
+
+.clin .input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 16%, transparent);
+}
+
+.clin .btn-block {
+  width: 100%;
+}
+
+/* -------------------------------------------------------------- console -- */
+
+.clin-strip {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 18px;
+  border-radius: var(--r-md);
+  border: 1px solid var(--line);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.clin-strip-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex: 1;
+  min-width: 0;
+}
+
+.clin-strip strong {
+  display: block;
+  font-size: 14.5px;
+  font-weight: 680;
+  color: var(--ink);
+}
+
+.clin-strip span {
+  font-size: 12.5px;
+  color: var(--ink-4);
+}
+
+.clin-dot {
+  width: 10px;
+  height: 10px;
+  flex: none;
+  border-radius: 50%;
+  background: var(--ink-4);
+}
+
+.clin-dot.is-live {
+  background: #16a34a;
+  box-shadow: 0 0 0 4px color-mix(in srgb, #16a34a 20%, transparent);
+  animation: clinPulse 2s var(--ease) infinite;
+}
+
+@keyframes clinPulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.45;
+  }
+}
+
+.clin-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.clin-panel {
+  padding: 20px;
+  border-radius: var(--r-md);
+  border: 1px solid var(--line);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.clin-panel h2 {
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--ink-4);
+  margin-bottom: 14px;
+}
+
+.clin-kv {
+  display: grid;
+  gap: 10px;
+}
+
+.clin-kv > div {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.clin-kv .k {
+  font-size: 12.5px;
+  color: var(--ink-4);
+}
+
+.clin-kv .v {
+  font-size: 13px;
+  font-weight: 620;
+  color: var(--ink-2);
+  text-align: right;
+}
+
+.clin-kv .v.is-code {
+  font-family: var(--mono);
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+}
+
+.clin-withheld {
+  display: grid;
+  gap: 9px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.clin-withheld li {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 13px;
+  color: var(--ink-3);
+}
+
+.clin-withheld .icon {
+  width: 14px;
+  height: 14px;
+  color: var(--rose, #e0454b);
+  flex: none;
+}
+
+.clin-fineprint {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--ink-4);
+}
+
+.clin-thread-panel {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.clin-thread {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-height: 46vh;
+  overflow-y: auto;
+  padding: 4px 2px 16px;
+  scrollbar-width: thin;
+}
+
+.clin-thread::-webkit-scrollbar {
+  width: 9px;
+}
+
+.clin-thread::-webkit-scrollbar-thumb {
+  background: var(--line-2);
+  border-radius: 5px;
+}
+
+.clin-empty {
+  margin: 8px 0;
+  padding: 20px;
+  border-radius: var(--r-md);
+  border: 1px dashed var(--line-2);
+  background: var(--surface-2);
+  text-align: center;
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: var(--ink-3);
+}
+
+/* --------------------------------------------------------------- footer -- */
+
+.clin-foot {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 20px;
+  padding: 16px 18px;
+  border-radius: var(--r-md);
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.clin-lock {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  min-width: 0;
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--ink-3);
+}
+
+.clin-lock .icon {
+  width: 16px;
+  height: 16px;
+  flex: none;
+  color: var(--rose, #e0454b);
+}
+
+.clin-lock.is-open .icon {
+  color: var(--green, #16a34a);
+}
+
+@media (max-width: 800px) {
+  .clin-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .clin-top {
+    padding: 0 14px;
+  }
+
+  .clin-main {
+    padding: 20px 14px 40px;
+  }
+
+  .clin-card {
+    padding: 22px;
+    margin-top: 2vh;
+  }
+
+  .clin-foot {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .clin .input {
+    font-size: 16px;
+  }
+}
