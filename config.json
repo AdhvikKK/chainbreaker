@@ -1,6 +1,6 @@
 {
   "preset": "groq",
-  "apiKey": "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",
+  "apiKey": "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",
   "baseUrl": "",
   "model": "openai/gpt-oss-20b",
   "port": 8787,
